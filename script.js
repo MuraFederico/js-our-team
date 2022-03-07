@@ -69,7 +69,54 @@ for (let i = 0; i < members.length; i++) {
 
 
 
+////////// BONUS //////////
+
+const addBtn = document.querySelector('#addMemberButton');
+const nameInput = document.querySelector('#name');
+const roleInput = document.querySelector('#role');
+const imageInput = document.querySelector('#image');
+
+
+addBtn.addEventListener('click', newCard);
 
 
 
+function newCard() {
+    
+    ////////// CREAZIONE NUOVO OGGETTO ARRAY //////////
+    members.push(
+        {
+           name: nameInput.value,
+           role: roleInput.value,
+           img: imageInput.value,
+        }
+    )
+    
+    let lastIndex = members.length - 1
 
+    ////////// RESET VALORI //////////
+    nameInput.value = '';
+    roleInput.value = '';
+    imageInput.value = '';
+
+    ////////// CREAZIONE CARD VUOTA  ////////// 
+    const card = document.createElement('div');
+    card.classList.add('team-card');
+    cardsContainer.append(card);
+
+    ////////// CREAZIONE CONTAINER IMG  ////////// 
+    const cardImageContainer = document.createElement('div');
+    cardImageContainer.classList.add('card-image');
+    card.append(cardImageContainer);
+
+    ////////// INSERIMENTO IMG //////////
+    cardImageContainer.innerHTML = `<img src="${members[lastIndex].img}" alt="${members[lastIndex].name}"/>`;
+
+    ////////// CREAZIONE CONTAINER TESTO  ////////// 
+    const cardTextContainer = document.createElement('div');
+    cardTextContainer.classList.add('card-text');
+    card.append(cardTextContainer);
+
+    ////////// INSERIMENTO TESTO //////////
+    cardTextContainer.innerHTML = `<h3>${members[lastIndex].name}</h3> <p>${members[lastIndex].role}</p>`;
+}
