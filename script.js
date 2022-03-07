@@ -40,3 +40,33 @@ const members = [
 
 const cardsContainer = document.querySelector('.team-container');
 
+
+for (let i = 0; i < members.length; i++) {
+
+    ////////// CREAZIONE CARD VUOTA ////////// 
+
+    const card = document.createElement('div');
+    card.classList.add('team-card');
+    cardsContainer.append(card);
+    
+    ////////// CREAZIONE CONTAINER IMG  ////////// 
+    const cardImageContainer = document.createElement('div');
+    cardImageContainer.classList.add('card-image');
+    card.append(cardImageContainer);
+
+    ////////// INSERIMENTO IMG ////////// 
+    cardImageContainer.innerHTML = `<img src="${members[i].img}" alt="${members[i].name}"/>`
+    
+    
+    const cardTextContainer = document.createElement('div');
+    cardTextContainer.classList.add('card-text');
+    card.append(cardTextContainer);
+    
+}
+
+
+
+
+
+
+
