@@ -55,12 +55,15 @@ for (let i = 0; i < members.length; i++) {
     card.append(cardImageContainer);
 
     ////////// INSERIMENTO IMG ////////// 
-    cardImageContainer.innerHTML = `<img src="${members[i].img}" alt="${members[i].name}"/>`
+    cardImageContainer.innerHTML = `<img src="${members[i].img}" alt="${members[i].name}"/>`;
     
-    
+    ////////// CREAZIONE CONTAINER TESTO  ////////// 
     const cardTextContainer = document.createElement('div');
     cardTextContainer.classList.add('card-text');
     card.append(cardTextContainer);
+
+    ////////// INSERIMENTO TESTO //////////
+    cardTextContainer.innerHTML = `<h3>${members[i].name}</h3> <p>${members[i].role}</p>`;
     
 }
 
