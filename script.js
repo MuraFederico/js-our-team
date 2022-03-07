@@ -120,3 +120,24 @@ function newCard() {
     ////////// INSERIMENTO TESTO //////////
     cardTextContainer.innerHTML = `<h3>${members[lastIndex].name}</h3> <p>${members[lastIndex].role}</p>`;
 }
+
+////////// BONUS EXTRA //////////
+
+const searchBtn = document.querySelector('#filterCardsButton');
+const filterWord = document.querySelector('#filter');
+
+searchBtn.addEventListener('click', filterFunction);
+
+function filterFunction() {
+    const cardList = document.querySelectorAll('.team-card');
+
+    for (let i = 0; i < members.length; i++) {
+        cardList[i].classList.remove('hide');
+
+        if (!members[i].name.toLowerCase().includes(filterWord.value.toLowerCase())) {
+            cardList[i].classList.add('hide');
+        }
+        
+    }
+    filterWord.value = '';
+}

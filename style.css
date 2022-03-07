@@ -122,7 +122,11 @@ button {
 
 button {
   width: 50%;
-  margin-top: 2em;
+  margin: 2em auto;
 
   font-size: 1rem;
+}
+
+.hide {
+  display: none;
 }
