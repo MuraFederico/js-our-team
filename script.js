@@ -126,9 +126,11 @@ function newCard() {
 const searchBtn = document.querySelector('#filterCardsButton');
 const filterWord = document.querySelector('#filter');
 
-searchBtn.addEventListener('click', filterFunction);
+// searchBtn.addEventListener('click', filterFunction);
 
-function filterFunction() {
+filterWord.addEventListener('input', filterFunction);
+
+function filterFunction(event) {
     const cardList = document.querySelectorAll('.team-card');
 
     for (let i = 0; i < members.length; i++) {
@@ -139,5 +141,5 @@ function filterFunction() {
         }
         
     }
-    filterWord.value = '';
+    // filterWord.value = '';
 }
