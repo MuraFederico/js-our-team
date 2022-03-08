@@ -132,7 +132,7 @@ function newCard() {
 
 ////////// BONUS EXTRA //////////
 
-const searchBtn = document.querySelector('#filterCardsButton');
+// const searchBtn = document.querySelector('#filterCardsButton');
 const filterWord = document.querySelector('#filter');
 
 // searchBtn.addEventListener('click', filterFunction);
