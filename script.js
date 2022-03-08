@@ -93,25 +93,25 @@ function newCard() {
     )
     
     let lastIndex = members.length - 1
-
+    
     ////////// RESET VALORI //////////
     nameInput.value = '';
     roleInput.value = '';
     imageInput.value = '';
-
+    
     ////////// CREAZIONE CARD VUOTA  ////////// 
     const card = document.createElement('div');
     card.classList.add('team-card');
     cardsContainer.append(card);
-
+    
     ////////// CREAZIONE CONTAINER IMG  ////////// 
     const cardImageContainer = document.createElement('div');
     cardImageContainer.classList.add('card-image');
     card.append(cardImageContainer);
-
+    
     ////////// INSERIMENTO IMG //////////
     cardImageContainer.innerHTML = `<img src="${members[lastIndex].img}" alt="${members[lastIndex].name}"/>`;
-
+    
     ////////// CREAZIONE CONTAINER TESTO  ////////// 
     const cardTextContainer = document.createElement('div');
     cardTextContainer.classList.add('card-text');
@@ -119,6 +119,15 @@ function newCard() {
 
     ////////// INSERIMENTO TESTO //////////
     cardTextContainer.innerHTML = `<h3>${members[lastIndex].name}</h3> <p>${members[lastIndex].role}</p>`;
+    
+    ////////// RESET DEL FILTRO //////////
+    filterWord.value = '';
+    const cardList = document.querySelectorAll('.team-card');
+    for (let i = 0; i < members.length; i++) {
+        cardList[i].classList.remove('hide');
+        
+    }
+    
 }
 
 ////////// BONUS EXTRA //////////
